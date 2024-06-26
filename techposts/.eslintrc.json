@@ -25,6 +25,7 @@
         "singleQuote": true,
         "trailingComma": "all",
         "arrowParens": "always",
+        "camelCase": "off",
         "semi": false
       }
     ],
