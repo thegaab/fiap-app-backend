@@ -27,7 +27,9 @@
         "arrowParens": "always",
         "semi": false
       }
-    ]
+    ],
+    "camelCase": "off",
+    "no-useless-constructor": "off"
   },
   "settings": {
     "import/parsers": {
