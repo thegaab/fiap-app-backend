@@ -21,9 +21,11 @@ class Database {
   private async connection() {
     try {
       this.client = await this.pool.connect()
+      console.info(
+        `Great! Connected to database ${env.DATABASE_NAME} at ${env.DATABASE_HOST}`,
+      )
     } catch (error) {
       console.error(`Ops! Error connecting to database${error}`)
-      throw new Error(`Ops! Error connecting to database${error}`)
     }
   }
 
