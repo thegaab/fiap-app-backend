@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +13,7 @@
   "description": "",
   "devDependencies": {
     "@types/node": "20.14.9",
+    "@types/pg": "8.11.6",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "eslint": "8.57.0",
@@ -28,6 +31,7 @@
   "dependencies": {
     "dotenv": "16.4.5",
     "fastify": "4.28.0",
+    "pg": "8.12.0",
     "zod": "3.23.8"
   }
 }
