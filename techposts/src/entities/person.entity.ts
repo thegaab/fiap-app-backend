@@ -1,4 +1,6 @@
-export class Person {
+import { IPerson } from './models/person.interface'
+
+export class Person implements IPerson {
   id?: number
   cpf: string
   name: string

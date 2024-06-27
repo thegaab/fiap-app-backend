@@ -1,5 +1,5 @@
-import { Person } from '@/entities/person.entity'
+import { IPerson } from '@/entities/models/person.interface'
 
 export interface IPersonRepository {
-  create(person: Person): Promise<Person | undefined>
+  create(person: IPerson): Promise<IPerson | undefined>
 }

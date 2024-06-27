@@ -1,7 +1,7 @@
+import { IUser } from '@/entities/models/user.interface'
 import { Person } from '@/entities/person.entity'
-import { User } from '@/entities/user.entity'
 
 export interface IUserRepository {
-  findWithPerson(userId: number): Promise<(User & Person) | undefined>
-  create(user: User): Promise<User | undefined>
+  findWithPerson(userId: number): Promise<(IUser & Person) | undefined>
+  create(user: IUser): Promise<IUser | undefined>
 }
