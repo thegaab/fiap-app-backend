@@ -25,11 +25,10 @@
         "singleQuote": true,
         "trailingComma": "all",
         "arrowParens": "always",
-        "camelCase": "off",
         "semi": false
       }
     ],
-    "camelCase": "off",
+    "camelcase": "off",  // Correção aqui
     "no-useless-constructor": "off"
   },
   "settings": {

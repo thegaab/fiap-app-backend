@@ -1,5 +1,5 @@
 import { FindWithPersonUseCase } from '../find-with-person'
-import { UserRepository } from '@/repositories/user.repository'
+import { UserRepository } from '@/repositories/pg/user.repository'
 
 export function makeFindWithPersonUseCase() {
   const userRepository = new UserRepository()
