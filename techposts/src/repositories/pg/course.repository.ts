@@ -35,7 +35,7 @@ export class CourseRepository implements ICourseRepository {
   }: ICourse): Promise<ICourse | undefined> {
     const result = await database.clientInstance?.query<ICourse>(
       `
-      INSERT INTO "course" (name, period, school_class, person_id) VALUE
+      INSERT INTO "course" (name, period, school_class, person_id) VALUES
       ($1, $2, $3, $4) RETURNING *
       `,
       [name, period, school_class, person_id],

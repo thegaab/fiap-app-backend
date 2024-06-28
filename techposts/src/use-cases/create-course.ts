@@ -4,7 +4,7 @@ import { ICourseRepository } from '@/repositories/course.repository.interface'
 export class CreateCourseUseCase {
   constructor(private courseRepository: ICourseRepository) {}
 
-  async ErrorHandlerMap(course: ICourse): Promise<ICourse | undefined> {
+  async handler(course: ICourse): Promise<ICourse | undefined> {
     return this.courseRepository.create(course)
   }
 }
