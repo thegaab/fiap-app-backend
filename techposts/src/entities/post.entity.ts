@@ -16,11 +16,4 @@ export class Post implements IPost {
 
   @Column({ name: 'image_url', type: 'varchar' })
   image_url: string
-
-  constructor(data: IPost) {
-    this.id = data.id
-    this.name = data.name
-    this.content = data.content
-    this.image_url = data.image_url
-  }
 }
