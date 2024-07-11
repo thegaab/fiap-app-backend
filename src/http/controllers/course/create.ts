@@ -3,7 +3,6 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 
 export async function create(req: FastifyRequest, reply: FastifyReply) {
-  // Definindo o esquema de validação para o corpo da requisição
   const registerBodySchema = z.object({
     name: z.string(),
     period: z.string(),
