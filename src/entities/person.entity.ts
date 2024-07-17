@@ -1,7 +1,7 @@
 import { IPerson } from './models/person.interface'
 
 export class Person implements IPerson {
-  id?: string | undefined
+  id?: number
   cpf: string
   name: string
   birth: Date

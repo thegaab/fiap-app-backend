@@ -1,24 +1,23 @@
 import fetch from 'node-fetch'
 
-interface IPost {
+interface IStock {
   name: string
-  content: string
-  url_image: string
-  relationalId: string
+  quantity: number
+  relationId: string
 }
 
-export async function createPostInPosts(post: IPost, token: string) {
-  const response = await fetch('http://localhost:3000/post', {
+export async function createProductInStock(product: IStock, token: string) {
+  const response = await fetch('http://localhost:3010/stock', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: token,
     },
-    body: JSON.stringify(post),
+    body: JSON.stringify(product),
   })
 
   if (!response.ok) {
-    throw new Error(`Error to create post in posts ${response.statusText}`)
+    throw new Error(`Failed to create product in stock ${response.status}`)
   }
 
   return response

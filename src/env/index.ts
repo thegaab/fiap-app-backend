@@ -1,7 +1,6 @@
-import dotenv from 'dotenv'
-import { z } from 'zod'
+import 'dotenv/config'
 
-dotenv.config()
+import { z } from 'zod'
 
 const envSchema = z.object({
   NODE_ENV: z
@@ -13,14 +12,15 @@ const envSchema = z.object({
   DATABASE_NAME: z.string(),
   DATABASE_PASSWORD: z.string(),
   DATABASE_PORT: z.coerce.number(),
+  JWT_SECRET: z.string(),
 })
 
 const _env = envSchema.safeParse(process.env)
 
 if (!_env.success) {
-  console.error(`Ops! Invalid environment variables`, _env.error.format())
+  console.error('Invalid environment variables', _env.error.format())
 
-  throw new Error(`Ops! Invalid environment variables`)
+  throw new Error('Invalid environment variables')
 }
 
 export const env = _env.data

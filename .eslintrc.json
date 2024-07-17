@@ -13,9 +13,8 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -28,15 +27,12 @@
         "semi": false
       }
     ],
-    "camelcase": "off",  // Correção aqui
-    "no-useless-constructor": "off"
+    "camelcase":"off",
+    "no-useless-constructor":"off"
   },
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".d.ts"
-      ]
+      "@typescript-eslint/parser": [".ts", ".d.ts"]
     }
   }
 }

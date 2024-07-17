@@ -1,7 +1,10 @@
 import { DataSource } from 'typeorm'
 
 import { env } from '@/env'
-import { Post } from '@/entities/post.entity'
+
+import { Product } from '@/entities/product.entity'
+import { Category } from '@/entities/category.entity'
+import { ProductAutoGenerateUUID1714090143497 } from './migrations/1714090143497-ProductAutoGenerateUUID'
 
 export const appDataSource = new DataSource({
   type: 'postgres',
@@ -10,7 +13,8 @@ export const appDataSource = new DataSource({
   username: env.DATABASE_USER,
   password: env.DATABASE_PASSWORD,
   database: env.DATABASE_NAME,
-  entities: [Post],
+  entities: [Category, Product],
+  migrations: [ProductAutoGenerateUUID1714090143497],
   logging: env.NODE_ENV === 'development',
 })
 
@@ -20,5 +24,5 @@ appDataSource
     console.log('Database with typeorm connected')
   })
   .catch((error) => {
-    console.log('Error connecting to database with typeorm', error)
+    console.error('Error connecting to database with typeorm', error)
   })

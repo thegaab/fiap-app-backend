@@ -1,8 +1,8 @@
 import { makeCreatePersonUseCase } from '@/use-cases/factory/make-create-person-use-case'
-import { FastifyReply, FastifyRequest } from 'fastify'
+import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 
-export async function create(req: FastifyRequest, reply: FastifyReply) {
+export async function create(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
     cpf: z.string(),
     name: z.string(),
@@ -12,7 +12,7 @@ export async function create(req: FastifyRequest, reply: FastifyReply) {
   })
 
   const { cpf, name, birth, email, user_id } = registerBodySchema.parse(
-    req.body,
+    request.body,
   )
 
   const createPersonUseCase = makeCreatePersonUseCase()
